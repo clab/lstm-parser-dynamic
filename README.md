@@ -73,4 +73,4 @@ This software is released under the terms of the [Apache License, Version 2.0](h
 
 #### Contact
 
-For questions and usage issues, please contact cdyer@cs.cmu.edu and miguel.ballesteros@upf.edu.
+For questions and usage issues, please contact miguelballesteros1@gmail.com and yoav.goldberg@gmail.com
