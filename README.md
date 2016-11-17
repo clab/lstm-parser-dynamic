@@ -13,7 +13,7 @@ See https://github.com/clab/lstm-parser for information about embeddings and dat
     make -j2
 
     
-# Command to run the parser (in allegro): 
+# Command to run the parser: 
 
     parser/lstm-parse -h
     
