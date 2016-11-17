@@ -47,10 +47,6 @@ Having a test.conll file formatted according to the [CoNLL data format](http://i
 The model name/id is stored where the parser has been trained.
 The parser will output the conll file with the parsing result.
 
-#### Pretrained models
-
-TODO
-
 #### Citation
 
 If you make use of this software, please cite the following:
