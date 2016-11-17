@@ -23,8 +23,8 @@ See https://github.com/clab/lstm-parser for more information (https://github.com
 
 Having a training.conll file and a development.conll formatted according to the [CoNLL data format](http://ilk.uvt.nl/conll/#dataformat), to train a parsing model with the LSTM parser type the following at the command line prompt:
 
-    java -jar ParserOracleArcStdWithSwap.jar -t -1 -l 1 -c training.conll > trainingOracle.txt
-    java -jar ParserOracleArcStdWithSwap.jar -t -1 -l 1 -c development.conll > devOracle.txt
+    java -jar ParserOracleArcStd.jar -t -1 -l 1 -c training.conll > trainingOracle.txt
+    java -jar ParserOracleArcStd.jar -t -1 -l 1 -c development.conll > devOracle.txt
 
     parser/lstm-parse -T trainingOracle.txt -d devOracle.txt --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 20 -t -P
     
@@ -34,13 +34,13 @@ Note-1: you can also run it without word embeddings by removing the -w option fo
 
 Note-2: the training process should be stopped when the development result does not substantially improve anymore. Normally, after 5500 iterations.
 
-Note-3: the parser reports (after each iteration) results including punctuation symbols while in the ACL-15 paper we report results excluding them (as it is common practice in those data sets). You can find eval.pl script from the CoNLL-X Shared Task to get the correct numbers.
+Note-3: the parser reports (after each iteration) results including punctuation symbols while in the ACL-15 and the EMNLP-16 paper we report results excluding them (as it is common practice in those data sets). You can find eval.pl script from the CoNLL-X Shared Task to get the correct numbers.
 
 #### Parse data with your parsing model
 
 Having a test.conll file formatted according to the [CoNLL data format](http://ilk.uvt.nl/conll/#dataformat)
 
-    java -jar ParserOracleArcStdWithSwap.jar -t -1 -l 1 -c test.conll > testOracle.txt
+    java -jar ParserOracleArcStd.jar -t -1 -l 1 -c test.conll > testOracle.txt
 
     parser/lstm-parse -T trainingOracle.txt -d testOracle.txt --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 20 -P -m parser_pos_2_32_100_20_100_12_20-pidXXXX.params
 
