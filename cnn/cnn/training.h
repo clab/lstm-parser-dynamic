@@ -2,6 +2,7 @@
 #define CNN_TRAINING_H_
 
 #include <vector>
+#include <iostream>
 #include "cnn/model.h"
 #include "cnn/shadow-params.h"
 
